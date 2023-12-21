@@ -3,7 +3,7 @@
 import express from 'express';
 import { tempRouter } from './src/routes/temp.route.js';
 import { userRouter } from './src/routes/user.route.js';
-import { specs } from './swagger/swagger.config.js';
+import { specs } from './config/swagger.config.js';
 import SwaggerUi from 'swagger-ui-express';
 import dotenv from 'dotenv';
 import cors from 'cors';
