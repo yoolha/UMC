@@ -1,0 +1,67 @@
+paths:
+  /user/challengeMission:
+    post:
+      tags:
+        - ChallengeMission
+      summary: 미션 도전하기
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userId:
+                  type: integer
+                  description: 사용자 ID
+                  example: 123
+                missionId:
+                  type: integer
+                  description: 미션 ID
+                  example: 456
+      responses:
+        '201':
+          description: 미션 도전 성공
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: 성공 메시지
+                    example: 미션 도전에 성공했습니다.
+                  challenge:
+                    type: object
+                    description: 도전 정보
+                    properties:
+                      userId:
+                        type: integer
+                        description: 사용자 ID
+                        example: 123
+                      missionId:
+                        type: integer
+                        description: 미션 ID
+                        example: 456
+        '400':
+          description: 잘못된 요청
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: 에러 메시지
+                    example: 이미 도전 중인 미션입니다.
+        '500':
+          description: 서버 에러
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: 에러 메시지
+                    example: 미션 도전 중 에러가 발생했습니다.

@@ -8,7 +8,8 @@ import { specs } from './config/swagger.config.js';
 import SwaggerUi from 'swagger-ui-express';
 import dotenv from 'dotenv';
 import cors from 'cors';
-import { missionRouter } from './src/routes/addmission.route.js';
+import { addmissionRouter } from './src/routes/addmission.route.js';
+import { challengemissionRouter } from './src/routes/challengemission.route.js';
 
 dotenv.config();    // .env 파일 사용 (환경 변수 관리)
 
@@ -35,7 +36,8 @@ app.use(express.urlencoded({extended: false})); // 단순 객체 문자열 형�
 app.use('/temp', tempRouter);
 app.use('/user', userRouter);
 app.use('/review', reviewRouter);
-app.use('/mission', missionRouter)
+app.use('/addmission', addmissionRouter);
+app.use('/challengemission', challengemissionRouter)
 
 // error handling
 app.use((err, req, res, next) => {

@@ -1,4 +1,4 @@
-export class MissionDTO {
+export class AddMissionDTO {
     constructor({ storeId, reward, deadline, missionSpec }) {
       this.storeId = storeId;
       this.reward = reward;

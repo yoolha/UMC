@@ -1,7 +1,7 @@
 import express from 'express';
 import { addMissionHandler } from '../controllers/addmission.controller.js';
 
-export const missionRouter = express.Router();
+export const addmissionRouter = express.Router();
 
 // POST /store/:storeId/mission
-missionRouter.post('/store/:storeId/mission', addMissionHandler);
+addmissionRouter.post('/store/:storeId/mission', addMissionHandler);

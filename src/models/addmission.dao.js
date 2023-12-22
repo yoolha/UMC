@@ -3,7 +3,7 @@ import { BaseError } from '../../config/error.js';
 import { status } from '../../config/response.status.js';
 import { insertMissionSql } from './addmission.sql.js';
 
-export const MissionDAO = {
+export const AddMissionDAO = {
   async addMission(missionDTO) {
     try {
       const conn = await pool.getConnection();
