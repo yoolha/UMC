@@ -1,4 +1,4 @@
-import { MissionService } from '../services/mission.service.js';
+import { MissionService } from '../services/addmission.service.js';
 
 export const addMissionHandler = async (req, res) => {
   const { storeId, reward, deadline, missionSpec } = req.body;

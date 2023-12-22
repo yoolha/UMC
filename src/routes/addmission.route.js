@@ -1,5 +1,5 @@
 import express from 'express';
-import { addMissionHandler } from '../controllers/mission.controller.js';
+import { addMissionHandler } from '../controllers/addmission.controller.js';
 
 export const missionRouter = express.Router();
 

@@ -1,5 +1,5 @@
-import { MissionDAO } from '../models/mission.dao.js';
-import { MissionDTO } from '../dtos/mission.dto.js';
+import { MissionDAO } from '../models/addmission.dao.js';
+import { MissionDTO } from '../dtos/addmission.dto.js';
 
 export class MissionService {
   static async addMission(missionData) {

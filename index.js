@@ -8,7 +8,7 @@ import { specs } from './config/swagger.config.js';
 import SwaggerUi from 'swagger-ui-express';
 import dotenv from 'dotenv';
 import cors from 'cors';
-import { missionRouter } from './src/routes/mission.route.js';
+import { missionRouter } from './src/routes/addmission.route.js';
 
 dotenv.config();    // .env 파일 사용 (환경 변수 관리)
 

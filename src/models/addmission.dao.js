@@ -1,7 +1,7 @@
 import { pool } from '../../config/db.connect.js';
 import { BaseError } from '../../config/error.js';
 import { status } from '../../config/response.status.js';
-import { insertMissionSql } from './mission.sql.js';
+import { insertMissionSql } from './addmission.sql.js';
 
 export const MissionDAO = {
   async addMission(missionDTO) {
