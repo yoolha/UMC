@@ -1,0 +1,90 @@
+paths:
+  /store/{storeId}/review:
+    post:
+      tags:
+        - Store
+      summary: 가게에 리뷰 추가하기
+      parameters:
+      - name: storeId
+        in: path
+        required: true
+        description: 가게 ID
+        type: string
+      - name: Review
+        in: body
+        required: true
+        schema:
+          properties:
+            score:
+              type: float
+              description: 별점
+              example: 3.5
+            content:
+              type: text
+              description: 리뷰 내용
+              example: 음식이 정말 맛있어요!
+            image:
+              type: url
+              description: 리뷰 이미지
+              example: https://velog.velcdn.com/images/hwjeong95/post/ea5a88d5-8696-47a6-9e5e-1d19b5739bce/image.png
+      responses:
+        '200':
+          description: 리뷰 등록 성공!
+          schema:
+            type: object
+            properties:
+              status:
+                type: integer
+                example: 200
+              isSuccess:
+                type: boolean
+                example: true
+              code:
+                type: integer
+                example: 2000
+              message:
+                type: string
+                example: "success!"
+              data:
+                type: object
+                example: {
+                  "score": 3.5,
+                  "content": "음식이 정말 맛있어요!",
+                  "image": "https://velog.velcdn.com/images/hwjeong95/post/ea5a88d5-8696-47a6-9e5e-1d19b5739bce/image.png"
+                }
+                
+        '400':
+          description: 잘못된 요청
+          schema:
+            type: object
+            properties:
+              status:
+                type: integer
+                example: 400
+              isSuccess:
+                type: boolean
+                example: false
+              code:
+                type: integer
+                example: COMMON001
+              message:
+                type: string
+                example: 잘못된 요청입니다
+
+        '500':
+          description: 서버 에러
+          schema:
+            type: object
+            properties:
+              status:
+                type: integer
+                example: 500
+              isSuccess:
+                type: boolean
+                example: false
+              code:
+                type: integer
+                example: COMMON000
+              message:
+                type: string
+                example: 서버 에러, 관리자에게 문의 바랍니다.
