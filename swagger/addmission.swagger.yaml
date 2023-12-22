@@ -1,0 +1,65 @@
+paths:
+  /store/{storeId}/add-mission:
+    post:
+      tags:
+        - AddMission
+      summary: 가게에 미션 추가하기
+      parameters:
+      - name: storeId
+        in: path
+        required: true
+        type: integer
+        description: 가게 ID
+        example: 123
+      - name: mission
+        in: body
+        required: true
+        schema:
+          properties:
+            reward:
+              type: integer
+              description: 미션 보상
+              example: 100
+            deadline:
+              type: string
+              format: date-time
+              description: 미션 마감일
+              example: "2024-12-31T23:59:59Z"
+            missionSpec:
+              type: string
+              description: 미션 설명
+              example: "가게에서 12000원 이상 결제하기"
+      responses:
+        '200':
+          description: 미션 추가 성공
+          schema:
+            type: object
+            properties:
+              status:
+                type: integer
+                example: 200
+              message:
+                type: string
+                example: "미션이 성공적으로 추가되었습니다."
+        '400':
+          description: 잘못된 요청
+          schema:
+            type: object
+            properties:
+              status:
+                type: integer
+                example: 400
+              message:
+                type: string
+                example: "잘못된 요청입니다."
+        '500':
+          description: 서버 에러
+          schema:
+            type: object
+            properties:
+              status:
+                type: integer
+                example: 500
+              message:
+                type: string
+                example: "서버 에러, 관리자에게 문의 바랍니다."
