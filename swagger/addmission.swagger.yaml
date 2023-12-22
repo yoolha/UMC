@@ -2,7 +2,7 @@ paths:
   /store/{storeId}/add-mission:
     post:
       tags:
-        - Mission
+        - AddMission
       summary: 가게에 미션 추가하기
       parameters:
       - name: storeId
