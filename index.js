@@ -3,6 +3,7 @@
 import express from 'express';
 import { tempRouter } from './src/routes/temp.route.js';
 import { userRouter } from './src/routes/user.route.js';
+import { reviewRouter } from './src/routes/review.route.js';
 import { specs } from './config/swagger.config.js';
 import SwaggerUi from 'swagger-ui-express';
 import dotenv from 'dotenv';
@@ -31,7 +32,8 @@ app.use(express.urlencoded({extended: false})); // 단순 객체 문자열 형�
 
 // router setting
 app.use('/temp', tempRouter);
-app.use('/user', userRouter);
+// app.use('/user', userRouter);
+app.use('/review', reviewRouter)
 
 // error handling
 app.use((err, req, res, next) => {
