@@ -1,4 +1,3 @@
-// review.dto.js
 
 export class ReviewDTO {
     constructor(storeId, score, content, image) {
